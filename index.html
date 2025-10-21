@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynasty 8 - Accueil</title>
+    <style>
+        /* Styles généraux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e6b325;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #e6b325;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #e6b325;
+            color: #1a1a2e;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #d4a21f;
+        }
+        
+        /* Section Catégories */
+        .categories {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            color: #1a1a2e;
+        }
+        
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .category-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .category-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .category-card-content {
+            padding: 1.5rem;
+        }
+        
+        .category-card h3 {
+            margin-bottom: 0.5rem;
+            color: #1a1a2e;
+        }
+        
+        .category-card a {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: #e6b325;
+            font-weight: 500;
+            text-decoration: none;
+        }
+        
+        /* Section À propos */
+        .about {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 4rem 0;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: #e6b325;
+        }
+        
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+        }
+        
+        .feature h3 {
+            color: #e6b325;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Section Contact */
+        .contact {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .contact p {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0f0f1a;
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: #e6b325;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #e6b325;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-features {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Dynasty 8</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="contact.html">Nous contacter</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Transformez votre intérieur avec style.</h1>
+            <p>Bienvenue chez Dynasty 8, L'Agence Immobilière qui sera votre partenaire en décoration d'intérieur pour rendre votre maison ou votre villa unique et reflétant votre personnalité.</p>
+            <a href="contact.html" class="btn">CONTACTEZ-NOUS</a>
+        </div>
+    </section>
+
+    <!-- Catégories Section -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Nos Catégories</h2>
+            <div class="category-grid">
+                <!-- Appartements -->
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Appartements">
+                    <div class="category-card-content">
+                        <h3>Appartements</h3>
+                        <a href="appartements.html">Voir tous les appartements</a>
+                    </div>
+                </div>
+                
+                <!-- Bureaux -->
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Bureaux">
+                    <div class="category-card-content">
+                        <h3>Bureaux</h3>
+                        <a href="bureaux.html">Voir tous les bureaux</a>
+                    </div>
+                </div>
+                
+                <!-- Garages -->
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Garages">
+                    <div class="category-card-content">
+                        <h3>Garages</h3>
+                        <a href="garages.html">Voir tous les garages</a>
+                    </div>
+                </div>
+                
+                <!-- Entrepôts -->
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Entrepôts">
+                    <div class="category-card-content">
+                        <h3>Entrepôts</h3>
+                        <a href="entrepots.html">Voir tous les entrepôts</a>
+                    </div>
+                </div>
+                
+                <!-- Shells -->
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Shells">
+                    <div class="category-card-content">
+                        <h3>Shells</h3>
+                        <a href="shells.html">Voir tous les shells</a>
+                    </div>
+                </div>
+                
+                <!-- Autres -->
+                <div class="category-card">
+                    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Autres">
+                    <div class="category-card-content">
+                        <h3>Autres</h3>
+                        <a href="autres.html">Voir toutes les options</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- À propos Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Créateurs d'intérieurs uniques</h2>
+                    <p>Dynasty 8 est une entreprise spécialisée dans la décoration d'intérieur pour les appartements et les villas. Nous proposons une large gamme de modèles et de couleurs pour répondre à tous les goûts et à tous les styles. Faites confiance à notre expertise pour rendre votre intérieur unique et chaleureux.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <h3>Créativité</h3>
+                            <p>La créativité est une source inépuisable d'inspiration et d'innovation.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Qualité</h3>
+                            <p>La qualité est un critère essentiel pour garantir la satisfaction des clients.</p>
+                        </div>
+                        <div class="feature">
+                            <h3>Personnalisation</h3>
+                            <p>La personnalisation permet de s'adapter aux préférences et aux besoins individuels de chaque personne.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Intérieur design" style="width: 100%; border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <h2 class="section-title">Besoin de nous contacter ?</h2>
+            <p>N'hésitez pas à nous contacter pour toute question ou demande de renseignements. Notre équipe est à votre disposition pour vous accompagner dans votre projet.</p>
+            <a href="contact.html" class="btn">CONTACTEZ-NOUS</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Dynasty 8</h3>
+                    <p>Votre partenaire en décoration d'intérieur pour rendre votre maison ou votre villa unique.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Catégories</h3>
+                    <ul>
+                        <li><a href="appartements.html">Appartements</a></li>
+                        <li><a href="bureaux.html">Bureaux</a></li>
+                        <li><a href="garages.html">Garages</a></li>
+                        <li><a href="entrepots.html">Entrepôts</a></li>
+                        <li><a href="shells.html">Shells</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens utiles</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="contact.html">Nous contacter</a></li>
+                        <li><a href="#">Ordre d'idée des prix</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Dynasty 8. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
