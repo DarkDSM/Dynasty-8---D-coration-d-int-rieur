@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appartements - Dynasty 8</title>
+    <style>
+        /* Styles généraux */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: #1a1a2e;
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #e6b325;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #e6b325;
+        }
+        
+        /* Hero Section */
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .page-hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.2rem;
+            color: #1a1a2e;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .gallery-item {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 3px solid #e6b325;
+        }
+        
+        .gallery-info {
+            padding: 1.5rem;
+        }
+        
+        .gallery-info h3 {
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .gallery-info .price {
+            color: #e6b325;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .gallery-info .description {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-small {
+            display: inline-block;
+            background-color: #1a1a2e;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            cursor: pointer;
+        }
+        
+        .btn-small:hover {
+            background-color: #e6b325;
+            color: #1a1a2e;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #0f0f1a;
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-column h3 {
+            color: #e6b325;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #e6b325;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">Dynasty 8</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="appartements.html">Appartements</a></li>
+                    <li><a href="bureaux.html">Bureaux</a></li>
+                    <li><a href="garages.html">Garages</a></li>
+                    <li><a href="entrepots.html">Entrepôts</a></li>
+                    <li><a href="shells.html">Shells</a></li>
+                    <li><a href="contact.html">Nous contacter</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Nos Appartements</h1>
+            <p>Découvrez notre sélection exclusive d'appartements, du plus économique au plus luxueux</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">Tous nos Appartements</h2>
+            <div class="gallery-grid">
+                
+                <!-- Appart Low Cost -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/low-cost-1.jpg" alt="Appart Low Cost">
+                    <div class="gallery-info">
+                        <h3>Appart Low Cost</h3>
+                        <p class="price">À partir de 100.000€</p>
+                        <p class="description">Solution économique parfaite pour un premier investissement</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Mid Cost -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/mid-cost-1.jpg" alt="Appart Mid Cost">
+                    <div class="gallery-info">
+                        <h3>Appart Mid Cost</h3>
+                        <p class="price">À partir de 200.000€</p>
+                        <p class="description">Excellent rapport qualité-prix avec finitions standards</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Moderne 1 -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/moderne-1-1.jpg" alt="Appart Moderne 1">
+                    <div class="gallery-info">
+                        <h3>Appart Moderne 1</h3>
+                        <p class="price">À partir de 350.000€</p>
+                        <p class="description">Design contemporain avec espaces optimisés</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Moderne 2 -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/moderne-2-1.jpg" alt="Appart Moderne 2">
+                    <div class="gallery-info">
+                        <h3>Appart Moderne 2</h3>
+                        <p class="price">À partir de 380.000€</p>
+                        <p class="description">Lumineux avec grandes baies vitrées</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Moderne 3 -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/moderne-3-1.jpg" alt="Appart Moderne 3">
+                    <div class="gallery-info">
+                        <h3>Appart Moderne 3</h3>
+                        <p class="price">À partir de 400.000€</p>
+                        <p class="description">Architecture épurée et matériaux nobles</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Moderne 4 -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/moderne-4-1.jpg" alt="Appart Moderne 4">
+                    <div class="gallery-info">
+                        <h3>Appart Moderne 4</h3>
+                        <p class="price">À partir de 420.000€</p>
+                        <p class="description">Espace ouvert avec cuisine intégrée</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Moderne 6 -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/moderne-6-1.jpg" alt="Appart Moderne 6">
+                    <div class="gallery-info">
+                        <h3>Appart Moderne 6</h3>
+                        <p class="price">À partir de 450.000€</p>
+                        <p class="description">Terrasse privative avec vue panoramique</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Moderne 7 -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/moderne-7-1.jpg" alt="Appart Moderne 7">
+                    <div class="gallery-info">
+                        <h3>Appart Moderne 7</h3>
+                        <p class="price">À partir de 470.000€</p>
+                        <p class="description">Design scandinave avec bois naturels</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Moderne 8 -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/moderne-8-1.jpg" alt="Appart Moderne 8">
+                    <div class="gallery-info">
+                        <h3>Appart Moderne 8</h3>
+                        <p class="price">À partir de 490.000€</p>
+                        <p class="description">Haute technologie domotique incluse</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Moderne 10 -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/moderne-10-1.jpg" alt="Appart Moderne 10">
+                    <div class="gallery-info">
+                        <h3>Appart Moderne 10</h3>
+                        <p class="price">À partir de 520.000€</p>
+                        <p class="description">Duplex avec mezzanine design</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Moderne 11 -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/moderne-11-1.jpg" alt="Appart Moderne 11">
+                    <div class="gallery-info">
+                        <h3>Appart Moderne 11</h3>
+                        <p class="price">À partir de 540.000€</p>
+                        <p class="description">Piscine intérieure privative</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Moderne 13 -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/moderne-13-1.jpg" alt="Appart Moderne 13">
+                    <div class="gallery-info">
+                        <h3>Appart Moderne 13</h3>
+                        <p class="price">À partir de 560.000€</p>
+                        <p class="description">Jardin d'hiver et verrière</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Moderne 15 -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/moderne-15-1.jpg" alt="Appart Moderne 15">
+                    <div class="gallery-info">
+                        <h3>Appart Moderne 15</h3>
+                        <p class="price">À partir de 580.000€</p>
+                        <p class="description">Toit-terrasse aménagé</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Moderne 17 -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/moderne-17-1.jpg" alt="Appart Moderne 17">
+                    <div class="gallery-info">
+                        <h3>Appart Moderne 17</h3>
+                        <p class="price">À partir de 600.000€</p>
+                        <p class="description">Suite parentale avec dressing</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Moderne 18 -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/moderne-18-1.jpg" alt="Appart Moderne 18">
+                    <div class="gallery-info">
+                        <h3>Appart Moderne 18</h3>
+                        <p class="price">À partir de 620.000€</p>
+                        <p class="description">Home cinéma intégré</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+                <!-- Appart Moderne 19 -->
+                <div class="gallery-item">
+                    <img src="photos/appartements/moderne-19-1.jpg" alt="Appart Moderne 19">
+                    <div class="gallery-info">
+                        <h3>Appart Moderne 19</h3>
+                        <p class="price">À partir de 650.000€</p>
+                        <p class="description">Penthouse avec vue exceptionnelle</p>
+                        <a href="#" class="btn-small">Voir détails</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Dynasty 8</h3>
+                    <p>Votre partenaire en décoration d'intérieur pour rendre votre maison ou votre villa unique.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Catégories</h3>
+                    <ul>
+                        <li><a href="appartements.html">Appartements</a></li>
+                        <li><a href="bureaux.html">Bureaux</a></li>
+                        <li><a href="garages.html">Garages</a></li>
+                        <li><a href="entrepots.html">Entrepôts</a></li>
+                        <li><a href="shells.html">Shells</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Liens utiles</h3>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="contact.html">Nous contacter</a></li>
+                        <li><a href="#">Ordre d'idée des prix</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Dynasty 8. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
