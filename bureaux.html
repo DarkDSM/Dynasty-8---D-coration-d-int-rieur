@@ -107,6 +107,10 @@
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            border-top: 5px solid #e6b325;
         }
         
         .gallery-item:hover {
@@ -114,15 +118,11 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
         }
         
-        .gallery-item img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-bottom: 3px solid #e6b325;
-        }
-        
         .gallery-info {
             padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
         
         .gallery-info h3 {
@@ -141,6 +141,7 @@
         .gallery-info .description {
             color: #666;
             margin-bottom: 1rem;
+            flex-grow: 1;
         }
         
         .features {
@@ -169,6 +170,8 @@
             text-decoration: none;
             transition: background-color 0.3s;
             cursor: pointer;
+            text-align: center;
+            margin-top: auto;
         }
         
         .btn-small:hover {
@@ -451,7 +454,6 @@
                 
                 <!-- Bureau Moderne 1 -->
                 <div class="gallery-item">
-                    <img src="photos/bureaux/Bureau.png" alt="Bureau Moderne 1">
                     <div class="gallery-info">
                         <h3>Bureau Moderne 1</h3>
                         <p class="price">À partir de 330.000$</p>
@@ -467,7 +469,6 @@
 
                 <!-- Bureau Moderne 2 -->
                 <div class="gallery-item">
-                    <img src="photos/bureaux/moderne-2-1.jpg" alt="Bureau Moderne 2">
                     <div class="gallery-info">
                         <h3>Bureau Moderne 2</h3>
                         <p class="price">À partir de 330.000$</p>
@@ -483,7 +484,6 @@
 
                 <!-- Bureau Moderne 3 -->
                 <div class="gallery-item">
-                    <img src="photos/bureaux/moderne-3-1.jpg" alt="Bureau Moderne 3">
                     <div class="gallery-info">
                         <h3>Bureau Moderne 3</h3>
                         <p class="price">À partir de 330.000$</p>
@@ -499,7 +499,6 @@
 
                 <!-- Bureau Moderne 4 -->
                 <div class="gallery-item">
-                    <img src="photos/bureaux/moderne-4-1.jpg" alt="Bureau Moderne 4">
                     <div class="gallery-info">
                         <h3>Bureau Moderne 4</h3>
                         <p class="price">À partir de 330.000$</p>
@@ -515,7 +514,6 @@
 
                 <!-- Bureau Moderne 5 -->
                 <div class="gallery-item">
-                    <img src="photos/bureaux/moderne-5-1.jpg" alt="Bureau Moderne 5">
                     <div class="gallery-info">
                         <h3>Bureau Moderne 5</h3>
                         <p class="price">À partir de 330.000$</p>
@@ -531,7 +529,6 @@
 
                 <!-- Bureau Moderne 6 -->
                 <div class="gallery-item">
-                    <img src="photos/bureaux/moderne-6-1.jpg" alt="Bureau Moderne 6">
                     <div class="gallery-info">
                         <h3>Bureau Moderne 6</h3>
                         <p class="price">À partir de 330.000$</p>
@@ -547,7 +544,6 @@
 
                 <!-- Bureau Moderne 7 -->
                 <div class="gallery-item">
-                    <img src="photos/bureaux/moderne-7-1.jpg" alt="Bureau Moderne 7">
                     <div class="gallery-info">
                         <h3>Bureau Moderne 7</h3>
                         <p class="price">À partir de 330.000$</p>
@@ -563,7 +559,6 @@
 
                 <!-- Bureau Moderne 8 -->
                 <div class="gallery-item">
-                    <img src="photos/bureaux/moderne-8-1.jpg" alt="Bureau Moderne 8">
                     <div class="gallery-info">
                         <h3>Bureau Moderne 8</h3>
                         <p class="price">À partir de 330.000$</p>
@@ -587,15 +582,15 @@
         <div class="modal-content">
             <div class="carousel-container">
                 <div class="carousel-slide">
-                    <img src="photos/bureaux/Bureau.png" alt="Bureau Moderne 1 - Bureau">
-                    <img src="photos/bureaux/bureau1.png" alt="Bureau Moderne 1 - Bureau 1">
-                    <img src="photos/bureaux/Entree.png" alt="Bureau Moderne 1 - Entrée">
-                    <img src="photos/bureaux/mid.png" alt="Bureau Moderne 1 - Mid">
-                    <img src="photos/bureaux/mid2.png" alt="Bureau Moderne 1 - Mid 2">
-                    <img src="photos/bureaux/pc.png" alt="Bureau Moderne 1 - PC">
-                    <img src="photos/bureaux/reu.png" alt="Bureau Moderne 1 - Réunion">
-                    <img src="photos/bureaux/vc.png" alt="Bureau Moderne 1 - VC">
-                    <img src="photos/bureaux/vesti.png" alt="Bureau Moderne 1 - Vestiaire">
+                    <img src="photos/1.0.jpg" alt="Bureau Moderne 1 - Vue 1">
+                    <img src="photos/1.1.jpg" alt="Bureau Moderne 1 - Vue 2">
+                    <img src="photos/1.2.jpg" alt="Bureau Moderne 1 - Vue 3">
+                    <img src="photos/1.3.jpg" alt="Bureau Moderne 1 - Vue 4">
+                    <img src="photos/1.4.jpg" alt="Bureau Moderne 1 - Vue 5">
+                    <img src="photos/1.5.jpg" alt="Bureau Moderne 1 - Vue 6">
+                    <img src="photos/1.6.jpg" alt="Bureau Moderne 1 - Vue 7">
+                    <img src="photos/1.7.jpg" alt="Bureau Moderne 1 - Vue 8">
+                    <img src="photos/1.8.jpg" alt="Bureau Moderne 1 - Vue 9">
                 </div>
                 <button class="carousel-btn carousel-prev">&#10094;</button>
                 <button class="carousel-btn carousel-next">&#10095;</button>
@@ -638,405 +633,6 @@
                     <span class="feature-tag">Éclairage LED</span>
                     <span class="feature-tag">Climatisation</span>
                     <span class="feature-tag">Accès 24/7</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Bureau Moderne 2 -->
-    <div id="modal-2" class="modal">
-        <span class="close-modal">&times;</span>
-        <div class="modal-content">
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="photos/bureaux/moderne-2-1.jpg" alt="Bureau Moderne 2 - Vue principale">
-                    <img src="photos/bureaux/moderne-2-2.jpg" alt="Bureau Moderne 2 - Espace de travail">
-                    <img src="photos/bureaux/moderne-2-3.jpg" alt="Bureau Moderne 2 - Salle de réunion">
-                    <img src="photos/bureaux/moderne-2-4.jpg" alt="Bureau Moderne 2 - Espace détente">
-                </div>
-                <button class="carousel-btn carousel-prev">&#10094;</button>
-                <button class="carousel-btn carousel-next">&#10095;</button>
-                <div class="carousel-indicators">
-                    <!-- Les indicateurs seront générés par JavaScript -->
-                </div>
-            </div>
-            <div class="modal-info">
-                <h2>Bureau Moderne 2</h2>
-                <p class="modal-description">Bureaux individuels avec cloisons acoustiques pour un travail concentré. Cet espace offre l'équilibre parfait entre collaboration et confidentialité, avec des espaces dédiés pour chaque employé.</p>
-                
-                <div class="price-info">
-                    <h3>Informations de Prix</h3>
-                    <div class="price-details">
-                        <div class="price-item">
-                            <span class="price-label">Garage 2 places (Peut être changé mais ↗️ Prix)</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix d'achat min :</span>
-                            <span class="price-value">330 000$</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix d'achat max :</span>
-                            <span class="price-value">540 000$</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix de location min :</span>
-                            <span class="price-value">1100$/jour</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix de location max :</span>
-                            <span class="price-value">1800$/jour</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="features">
-                    <span class="feature-tag">Bureaux individuels</span>
-                    <span class="feature-tag">Isolation acoustique</span>
-                    <span class="feature-tag">Climatisation</span>
-                    <span class="feature-tag">Éclairage naturel</span>
-                    <span class="feature-tag">Mobilier ergonomique</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Bureau Moderne 3 -->
-    <div id="modal-3" class="modal">
-        <span class="close-modal">&times;</span>
-        <div class="modal-content">
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="photos/bureaux/moderne-3-1.jpg" alt="Bureau Moderne 3 - Suite direction">
-                    <img src="photos/bureaux/moderne-3-2.jpg" alt="Bureau Moderne 3 - Bureau du directeur">
-                    <img src="photos/bureaux/moderne-3-3.jpg" alt="Bureau Moderne 3 - Salon d'accueil">
-                    <img src="photos/bureaux/moderne-3-4.jpg" alt="Bureau Moderne 3 - Vue panoramique">
-                </div>
-                <button class="carousel-btn carousel-prev">&#10094;</button>
-                <button class="carousel-btn carousel-next">&#10095;</button>
-                <div class="carousel-indicators">
-                    <!-- Les indicateurs seront générés par JavaScript -->
-                </div>
-            </div>
-            <div class="modal-info">
-                <h2>Bureau Moderne 3</h2>
-                <p class="modal-description">Direction avec suite exécutive privée pour un cadre de travail prestigieux. Cet espace impressionnant comprend un bureau privé, un salon d'accueil et une vue panoramique exceptionnelle.</p>
-                
-                <div class="price-info">
-                    <h3>Informations de Prix</h3>
-                    <div class="price-details">
-                        <div class="price-item">
-                            <span class="price-label">Garage 2 places (Peut être changé mais ↗️ Prix)</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix d'achat min :</span>
-                            <span class="price-value">330 000$</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix d'achat max :</span>
-                            <span class="price-value">540 000$</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix de location min :</span>
-                            <span class="price-value">1100$/jour</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix de location max :</span>
-                            <span class="price-value">1800$/jour</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="features">
-                    <span class="feature-tag">Suite direction</span>
-                    <span class="feature-tag">Salon d'accueil</span>
-                    <span class="feature-tag">Vue panoramique</span>
-                    <span class="feature-tag">Mobilier haut de gamme</span>
-                    <span class="feature-tag">Sécurité renforcée</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Bureau Moderne 4 -->
-    <div id="modal-4" class="modal">
-        <span class="close-modal">&times;</span>
-        <div class="modal-content">
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="photos/bureaux/moderne-4-1.jpg" alt="Bureau Moderne 4 - Espace créatif">
-                    <img src="photos/bureaux/moderne-4-2.jpg" alt="Bureau Moderne 4 - Zone détente">
-                    <img src="photos/bureaux/moderne-4-3.jpg" alt="Bureau Moderne 4 - Cuisine équipée">
-                    <img src="photos/bureaux/moderne-4-4.jpg" alt="Bureau Moderne 4 - Salle de brainstorming">
-                </div>
-                <button class="carousel-btn carousel-prev">&#10094;</button>
-                <button class="carousel-btn carousel-next">&#10095;</button>
-                <div class="carousel-indicators">
-                    <!-- Les indicateurs seront générés par JavaScript -->
-                </div>
-            </div>
-            <div class="modal-info">
-                <h2>Bureau Moderne 4</h2>
-                <p class="modal-description">Espace créatif avec zones de détente intégrées pour stimuler l'innovation. Ce bureau unique combine espaces de travail collaboratifs, zones de brainstorming et aires de repos pour favoriser la créativité.</p>
-                
-                <div class="price-info">
-                    <h3>Informations de Prix</h3>
-                    <div class="price-details">
-                        <div class="price-item">
-                            <span class="price-label">Garage 2 places (Peut être changé mais ↗️ Prix)</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix d'achat min :</span>
-                            <span class="price-value">330 000$</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix d'achat max :</span>
-                            <span class="price-value">540 000$</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix de location min :</span>
-                            <span class="price-value">1100$/jour</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix de location max :</span>
-                            <span class="price-value">1800$/jour</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="features">
-                    <span class="feature-tag">Espace créatif</span>
-                    <span class="feature-tag">Zone détente</span>
-                    <span class="feature-tag">Cuisine équipée</span>
-                    <span class="feature-tag">Murs effaçables</span>
-                    <span class="feature-tag">Éclairage adaptable</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Bureau Moderne 5 -->
-    <div id="modal-5" class="modal">
-        <span class="close-modal">&times;</span>
-        <div class="modal-content">
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="photos/bureaux/moderne-5-1.jpg" alt="Bureau Moderne 5 - Technologie">
-                    <img src="photos/bureaux/moderne-5-2.jpg" alt="Bureau Moderne 5 - Domotique">
-                    <img src="photos/bureaux/moderne-5-3.jpg" alt="Bureau Moderne 5 - Sécurité">
-                    <img src="photos/bureaux/moderne-5-4.jpg" alt="Bureau Moderne 5 - Infrastructure">
-                </div>
-                <button class="carousel-btn carousel-prev">&#10094;</button>
-                <button class="carousel-btn carousel-next">&#10095;</button>
-                <div class="carousel-indicators">
-                    <!-- Les indicateurs seront générés par JavaScript -->
-                </div>
-            </div>
-            <div class="modal-info">
-                <h2>Bureau Moderne 5</h2>
-                <p class="modal-description">Technologie avancée avec domotique complète pour un bureau du futur. Cet espace intègre les dernières innovations en matière de connectivité, sécurité et automatisation pour une expérience de travail optimale.</p>
-                
-                <div class="price-info">
-                    <h3>Informations de Prix</h3>
-                    <div class="price-details">
-                        <div class="price-item">
-                            <span class="price-label">Garage 2 places (Peut être changé mais ↗️ Prix)</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix d'achat min :</span>
-                            <span class="price-value">330 000$</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix d'achat max :</span>
-                            <span class="price-value">540 000$</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix de location min :</span>
-                            <span class="price-value">1100$/jour</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix de location max :</span>
-                            <span class="price-value">1800$/jour</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="features">
-                    <span class="feature-tag">Domotique</span>
-                    <span class="feature-tag">Fibre optique</span>
-                    <span class="feature-tag">Sécurité avancée</span>
-                    <span class="feature-tag">Automatisation</span>
-                    <span class="feature-tag">Écrans interactifs</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Bureau Moderne 6 -->
-    <div id="modal-6" class="modal">
-        <span class="close-modal">&times;</span>
-        <div class="modal-content">
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="photos/bureaux/moderne-6-1.jpg" alt="Bureau Moderne 6 - Design scandinave">
-                    <img src="photos/bureaux/moderne-6-2.jpg" alt="Bureau Moderne 6 - Bois naturel">
-                    <img src="photos/bureaux/moderne-6-3.jpg" alt="Bureau Moderne 6 - Éclairage naturel">
-                    <img src="photos/bureaux/moderne-6-4.jpg" alt="Bureau Moderne 6 - Détails design">
-                </div>
-                <button class="carousel-btn carousel-prev">&#10094;</button>
-                <button class="carousel-btn carousel-next">&#10095;</button>
-                <div class="carousel-indicators">
-                    <!-- Les indicateurs seront générés par JavaScript -->
-                </div>
-            </div>
-            <div class="modal-info">
-                <h2>Bureau Moderne 6</h2>
-                <p class="modal-description">Design scandinave avec matériaux naturels pour un environnement de travail apaisant et inspirant. Ce bureau allie esthétique minimaliste, fonctionnalité et connexion avec la nature grâce à ses matériaux authentiques.</p>
-                
-                <div class="price-info">
-                    <h3>Informations de Prix</h3>
-                    <div class="price-details">
-                        <div class="price-item">
-                            <span class="price-label">Garage 2 places (Peut être changé mais ↗️ Prix)</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix d'achat min :</span>
-                            <span class="price-value">330 000$</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix d'achat max :</span>
-                            <span class="price-value">540 000$</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix de location min :</span>
-                            <span class="price-value">1100$/jour</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix de location max :</span>
-                            <span class="price-value">1800$/jour</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="features">
-                    <span class="feature-tag">Design scandinave</span>
-                    <span class="feature-tag">Bois naturel</span>
-                    <span class="feature-tag">Éclairage naturel</span>
-                    <span class="feature-tag">Minimalisme</span>
-                    <span class="feature-tag">Écoresponsable</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Bureau Moderne 7 -->
-    <div id="modal-7" class="modal">
-        <span class="close-modal">&times;</span>
-        <div class="modal-content">
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="photos/bureaux/moderne-7-1.jpg" alt="Bureau Moderne 7 - Espace premium">
-                    <img src="photos/bureaux/moderne-7-2.jpg" alt="Bureau Moderne 7 - Terrasse privative">
-                    <img src="photos/bureaux/moderne-7-3.jpg" alt="Bureau Moderne 7 - Parking privé">
-                    <img src="photos/bureaux/moderne-7-4.jpg" alt="Bureau Moderne 7 - Détails luxueux">
-                </div>
-                <button class="carousel-btn carousel-prev">&#10094;</button>
-                <button class="carousel-btn carousel-next">&#10095;</button>
-                <div class="carousel-indicators">
-                    <!-- Les indicateurs seront générés par JavaScript -->
-                </div>
-            </div>
-            <div class="modal-info">
-                <h2>Bureau Moderne 7</h2>
-                <p class="modal-description">Espace premium avec terrasse privative pour un cadre de travail exclusif. Ce bureau haut de gamme offre des finitions luxueuses, des espaces extérieurs privatifs et tous les services premium pour une expérience professionnelle d'exception.</p>
-                
-                <div class="price-info">
-                    <h3>Informations de Prix</h3>
-                    <div class="price-details">
-                        <div class="price-item">
-                            <span class="price-label">Garage 2 places (Peut être changé mais ↗️ Prix)</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix d'achat min :</span>
-                            <span class="price-value">330 000$</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix d'achat max :</span>
-                            <span class="price-value">540 000$</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix de location min :</span>
-                            <span class="price-value">1100$/jour</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix de location max :</span>
-                            <span class="price-value">1800$/jour</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="features">
-                    <span class="feature-tag">Terrasse privative</span>
-                    <span class="feature-tag">Espace premium</span>
-                    <span class="feature-tag">Parking privé</span>
-                    <span class="feature-tag">Service concierge</span>
-                    <span class="feature-tag">Finitions luxueuses</span>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal for Bureau Moderne 8 -->
-    <div id="modal-8" class="modal">
-        <span class="close-modal">&times;</span>
-        <div class="modal-content">
-            <div class="carousel-container">
-                <div class="carousel-slide">
-                    <img src="photos/bureaux/moderne-8-1.jpg" alt="Bureau Moderne 8 - Siège social">
-                    <img src="photos/bureaux/moderne-8-2.jpg" alt="Bureau Moderne 8 - Espace événementiel">
-                    <img src="photos/bureaux/moderne-8-3.jpg" alt="Bureau Moderne 8 - Salle de conférence">
-                    <img src="photos/bureaux/moderne-8-4.jpg" alt="Bureau Moderne 8 - Détails luxueux">
-                </div>
-                <button class="carousel-btn carousel-prev">&#10094;</button>
-                <button class="carousel-btn carousel-next">&#10095;</button>
-                <div class="carousel-indicators">
-                    <!-- Les indicateurs seront générés par JavaScript -->
-                </div>
-            </div>
-            <div class="modal-info">
-                <h2>Bureau Moderne 8</h2>
-                <p class="modal-description">Siège social luxueux avec espaces événementiels pour une entreprise prestigieuse. Cet espace exceptionnel combine bureaux exécutifs, salles de conférence de standing et espaces polyvalents pour organiser des événements d'entreprise mémorables.</p>
-                
-                <div class="price-info">
-                    <h3>Informations de Prix</h3>
-                    <div class="price-details">
-                        <div class="price-item">
-                            <span class="price-label">Garage 2 places (Peut être changé mais ↗️ Prix)</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix d'achat min :</span>
-                            <span class="price-value">330 000$</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix d'achat max :</span>
-                            <span class="price-value">540 000$</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix de location min :</span>
-                            <span class="price-value">1100$/jour</span>
-                        </div>
-                        <div class="price-item">
-                            <span class="price-label">Prix de location max :</span>
-                            <span class="price-value">1800$/jour</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="features">
-                    <span class="feature-tag">Espace événementiel</span>
-                    <span class="feature-tag">Luxe</span>
-                    <span class="feature-tag">Salle de conférence</span>
-                    <span class="feature-tag">Reception prestigieuse</span>
-                    <span class="feature-tag">Technologie avancée</span>
                 </div>
             </div>
         </div>
